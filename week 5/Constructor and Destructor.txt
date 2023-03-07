@@ -1,0 +1,129 @@
+//ตัวอย่างโปรแกรมที่ 1 สไลด์หน้า 4-6
+class Circle {
+	private  int radius;
+	private float area;
+	public Circle(int r){	
+      	radius  = r;
+      	System.out.print("\n *** I'm in the constructor method!!! ***\n");
+	}
+	public void calArea(){
+         area = 3.14f * radius * radius;
+	System.out.println("Area: " + area);
+    }
+};
+public class JavaApp1 {
+	public static void main(String[] args) { 				Circle myCircle = new Circle(2);		
+		myCircle.calArea();					}
+}
+
+//ตัวอย่างโปรแกรมที่ 2 สไลด์หน้า 7-10
+class Employee {
+	private String name;
+	private long emp_id;
+	private float salary;
+	public Employee (String  n, long  i, float s){
+		name = n;
+		emp_id= i;
+		salary=s;
+		System.out.println("I am "+ n );
+	} 
+	 public void showEmployee() {			
+            	System.out.println("Employee: " + name);
+            	System.out.println("Id: "+ emp_id );
+            	System.out.println("Salary: "+ salary + “\n”);
+	}
+}; 
+class Employee {
+	private String name;
+	private long emp_id;
+	private float salary;
+	public Employee (String  n, long  i, float s){
+		name = n;
+		emp_id= i;
+		salary=s;
+		System.out.println("I am "+ n );
+	} 
+	 public void showEmployee() {			
+            	System.out.println("Employee: " + name);
+            	System.out.println("Id: "+ emp_id );
+            	System.out.println("Salary: "+ salary + “\n”);
+	}
+}; 
+
+
+//ตัวอย่างโปรแกรมที่ 3 สไลด์หน้า 13-15
+class Employee {
+		   private String name;
+		   private long emp_id;
+		   private float salary;
+        public Employee(){		//constructor ที่ 1
+            System.out.println("I am the first constructor");
+        }
+        public Employee(String n) { //constructor ที่ 2
+            name = n;
+            System.out.println("I am the second constructor");
+        }
+			public Employee (String  n, long  i, float s){//constructor ที่ 3
+            name = n;
+            emp_id= i;
+            salary=s;
+            System.out.println("I am the third constructor");
+			} 
+};  
+public class JavaApp3 {
+   public static void main(String[] args) {
+
+		Employee   e1 = new Employee();		
+		Employee   e2 = new Employee("Matinee Kiewkanya");	
+		Employee   e3 = new Employee("Benjamas Panyangam",1002,10000.0f); 	
+}
+//ตัวอย่างโปรแกรมที่ 4 สไลด์หน้า 16-18
+//ใช้งาน Constructor เพื่อสร้างวัตถุที่เป็นสมาชิกใน Array
+class Book {
+    private int bookId;
+    private String name;
+    private int price;
+    
+    public Book(int i, String n, int p){
+        		bookId = i;
+        		name=n;
+        		price=p;
+    }    
+
+    public void printData() {
+        System.out.println("Id: "+bookId+" Name: "+name
+        +" Price: "+price);
+    }
+} 
+public class JavaApp4 {
+   public static void main(String[] args) {
+
+       Book book1 = new Book(1,"Java", 290);
+       Book book2 = new Book(2,"SQL", 250);
+       Book book3 = new Book(3,"PHP", 260);      
+       
+       Book[] mybook = new Book[3];
+       mybook[0]=book1;
+       mybook[1]=book2;
+       mybook[2]=book3;
+       
+       for(int i=0;i<=2;i++)
+           mybook[i].printData();
+    }	
+}
+
+//ตัวอย่างโปรแกรมที่ 5 สไลด์หน้า 19-20 ใช้งาน Constructor เพื่อสร้างวัตถุที่เป็นสมาชิกใน Array
+//code ในส่วนของคลาส Book จะใช้เหมือนกับตัวอย่างที่ 4  แต่จะเปลี่ยนแปลงในส่วนของ main()
+public class JavaApp5 {
+   public static void main(String[] args) {
+
+		  Book[] mybook =  {new Book(1,"Java", 290), 
+                                         new Book(2,"SQL", 250), 
+                                         new Book(3,"PHP", 260)}; 
+       
+       for(int i=0;i<=2;i++)
+           	mybook[i].printData();
+    }	
+}
+
+

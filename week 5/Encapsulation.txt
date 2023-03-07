@@ -1,0 +1,153 @@
+//ตัวอย่างโปรแกรมที่ 1  หน้า 35-36
+class MyClass{    
+     public  int  data1 ;
+     public  int  data2;   
+     public  int  data3;
+
+     public  void addData()  {
+	    data3 = data1 + data2 ; 
+     }
+} 
+public class JavaApp1 {
+    public static void main(String[] args){
+            MyClass myObj;
+        	myObj = new MyClass();
+        
+    	myObj.data1 = 10;
+    	myObj.data2 = 20;
+    	myObj.addData( );
+      	System.out.println("result = " + myObj.data3);
+    }
+}
+
+
+//ตัวอย่างโปรแกรมที่ 2 สไลด์หน้า 37-38
+import java.util.Scanner;
+class MyClass2{  
+    private int data1 ;
+    private int data2;
+    private int data3;
+    public void setData(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter data1 : ");
+        data1 = input.nextInt();
+        System.out.print("Enter data2 : ");
+        data2 = input.nextInt();
+   } 
+   private void addData(){
+        data3 = data1 + data2 ;
+    }
+    public void printResult(){
+        addData( );
+        System.out.println("result = " + data3);
+    }
+}
+
+
+
+//ตัวอย่างโปรแกรมที่ 3 สไลด์หน้า 42-44
+class Circle {
+	private  int radius;
+    	private  float  area;
+
+    	 public void setRadius (int r) {     
+    		radius  = r;
+	}	
+   	 public void calArea(){
+		area = 3.14f * radius * radius;
+	}			
+   	 public void display( ) {
+    		System.out.println("Area of circle with radius " + radius   + " is " + area) ;
+	}
+}
+
+public class JavaApp3{
+    public static void main(String[] args){
+     	
+	Circle circleObj = new Circle();
+
+     	circleObj.setRadius(5);
+     	circleObj.calArea();
+     	circleObj.display( );
+}
+
+
+//ตัวอย่างโปรแกรมที่ 4 สไลด์หน้า 45-47
+class Circle {
+	private int radius;
+    	private float  area;
+        
+           public void setRadius(int r){
+            	radius  = r;
+          }
+    	public int getRadius(){
+            	return radius;
+	}
+	 public float  getArea(){	
+            	return area;
+	}
+        	public void calArea(){
+            	area = 3.14f * radius * radius;
+	}
+} 
+ 
+public class JavaApp4 {
+    public static void main(String[] args){
+        Circle[] circleObj = new Circle[5];
+        int i;
+        float sum =0f;
+
+        for(i=0;i<5;i++)  {   
+			circleObj[i]= new Circle();
+            circleObj[i].setRadius(i+1);
+            circleObj[i].calArea();
+            
+			System.out.print("radius = " + circleObj[i].getRadius());
+             System.out.print(" area = " + circleObj[i].getArea()+ "\n");
+            sum += circleObj[i].getArea();
+        }
+        System.out.println("Total area = " + sum);
+    }
+}
+
+//ตัวอย่างโปรแกรมที่ 5  สไลด์หน้า 49-52
+class Person {
+    private String name; //instance data  
+    public static int count=0;   //class data
+    
+    public void setName(){ //instance method
+        	Scanner input = new Scanner(System.in);
+  	System.out.print("Enter name : ");
+       	name = input.nextLine();       count++;
+        	System.out.println("count = "+count);
+    }
+    
+    public void showName(){//instance method
+    	System.out.println(" name : "+name);
+    }
+    
+    public static void showCount(){//class method
+    	System.out.println("count = "+count);
+    }
+} 
+
+public class JavaApp5 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        char ans;
+        int i=0;
+        Person p[]=new Person[50];
+        do{ 
+            	p[i] = new Person(); 
+            	p[i].setName();  //call instance method
+            	System.out.print("Any person?(y/n)");
+            	ans = input.nextLine().charAt(0);
+            	i++;
+        }while (ans=='y');
+         
+        for(i=0;i<Person.count;i++) {
+            	p[i].showName();  //call instance method
+        }
+        Person.showCount();  //call class method
+}}
+
